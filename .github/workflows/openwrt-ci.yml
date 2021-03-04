@@ -46,7 +46,10 @@ jobs:
           df -h
 
       - name: Load upstream commits
-        run: git pull https://github.com/coolsnowwolf/lede.git --no-rebase --allow-unrelated-histories
+        run: |
+          git config --global user.email "hzhawk@gmail.com"
+          git config --global user.name "hzhawk"
+          git pull https://github.com/coolsnowwolf/lede.git --no-rebase --allow-unrelated-histories
 
       - name: Update feeds
         run: |
