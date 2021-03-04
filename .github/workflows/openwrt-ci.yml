@@ -46,7 +46,9 @@ jobs:
           df -h
 
       - name: Load upstream commits
-        run: git pull https://github.com/coolsnowwolf/lede.git
+        run: |
+          git config pull.rebase false
+          git pull https://github.com/coolsnowwolf/lede.git
 
       - name: Update feeds
         run: |
